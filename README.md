@@ -33,8 +33,8 @@ Dado que la herramienta inyecta y manipula cabeceras IP y TCP personalizadas des
 ## 🛠️ Uso e Instalación
 Clona este repositorio en tu entorno local:
 ```bash
-git clone https://github.com/hideonn1/lab_seguridad.git
-cd lab_seguridad
+git clone https://github.com/hideonn1/rusty-syn-stateless.git
+cd rusty-syn-stateless
 ```
 Luego, compila el binario en modo optimización para producción:
 ```bash
@@ -42,7 +42,7 @@ cargo build --release
 ```
 Ejecuta el binario utilizando sudo para proveer acceso a sockets raw:
 ```bash
-sudo ./target/release/lab_seguridad
+sudo ./target/release/rusty-syn-stateless
 ```
 O bien, puedes usar este comando para utilizar el script de manera directa:
 ```bash
