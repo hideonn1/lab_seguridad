@@ -1,11 +1,15 @@
 [package]
-name = "lab_seguridad"
-version = "0.1.0"
+name = "rustysn"
+version = "0.7.0"
 edition = "2021"
+
+[[bin]]
+name = "rustysn"
+path = "src/main.rs"
 
 [dependencies]
 tokio   = { version = "1", features = ["full"] }
 socket2 = { version = "0.5", features = ["all"] }
 rand    = "0.8"
 libc    = "0.2"
-clap    = { version = "=4.0.32", features = ["derive"] }
+clap    = { version = "4", features = ["derive"] }
