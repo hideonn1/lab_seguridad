@@ -144,16 +144,17 @@ pub async fn ejecutar_escaner(args: EscanerArgs) -> io::Result<()> {
                     ]);
                     let flags = buffer[tcp_start + 13];
 
-                    if p_dst_recibido == p_origen {
-                        if verificar_token(ip_src, p_src, ack_recibido, session_salt) {
-                            if flags & 0x12 == 0x12 {
-                                if verbosidad != Verbosidad::Silencioso {
-                                    println!("[+] ¡ABIERTO!  -> {}:{}", ip_src, p_src);
-                                }
-                                resultados.push((ip_src, p_src, EstadoPuerto::Abierto));
-                            } else if flags & 0x04 == 0x04 {
-                                resultados.push((ip_src, p_src, EstadoPuerto::Cerrado));
+                    // FIX CLIPPY: collapsible_if aplicado aquí
+                    if p_dst_recibido == p_origen
+                        && verificar_token(ip_src, p_src, ack_recibido, session_salt)
+                    {
+                        if flags & 0x12 == 0x12 {
+                            if verbosidad != Verbosidad::Silencioso {
+                                println!("[+] ¡ABIERTO!  -> {}:{}", ip_src, p_src);
                             }
+                            resultados.push((ip_src, p_src, EstadoPuerto::Abierto));
+                        } else if flags & 0x04 == 0x04 {
+                            resultados.push((ip_src, p_src, EstadoPuerto::Cerrado));
                         }
                     }
                     guard.clear_ready();
@@ -216,5 +217,6 @@ pub async fn ejecutar_escaner(args: EscanerArgs) -> io::Result<()> {
         _ = sniffer => {}
         _ = tokio::time::sleep(tokio::time::Duration::from_secs(args.timeout_secs)) => {}
     }
+
     Ok(())
 }
