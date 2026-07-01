@@ -60,3 +60,13 @@ sudo cargo run
 ## 🔒 Descargo de Responsabilidad
 
 Este software ha sido desarrollado con fines estrictamente académicos, de investigación y auditoría de seguridad interna en entornos de laboratorio controlados. El uso de esta herramienta sobre redes de terceros sin autorización explícita es ilegal y bajo la total responsabilidad del operador.
+
+## Licencia
+
+Este software está bajo una licencia dual, lo que significa que puedes elegir utilizarlo bajo los términos de cualquiera de las siguientes licencias:
+
+    MIT License (LICENSE-MIT)
+
+    Apache License, Version 2.0 (LICENSE-APACHE)
+
+A menos que indiques explícitamente lo contario, cualquier distribución que realices a este proyecto será licenciada bajo los mismos términos anteriores, sin términos o condiciones adicionales.

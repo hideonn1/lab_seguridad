@@ -2,6 +2,9 @@
 name = "rustysn"
 version = "0.7.0"
 edition = "2021"
+authors = ["Pedro Lorca Astroza <lorcapedro883@gmail.com>"]
+description = "Escáner SYN y monitor de conexiones para redes."
+license = "MIT OR Apache-2.0"
 
 [[bin]]
 name = "rustysn"
