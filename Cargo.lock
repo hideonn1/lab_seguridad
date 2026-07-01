@@ -266,7 +266,7 @@ dependencies = [
 
 [[package]]
 name = "rustysn"
-version = "0.7.0"
+version = "0.7.1"
 dependencies = [
  "clap",
  "libc",

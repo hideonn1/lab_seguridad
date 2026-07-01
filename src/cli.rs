@@ -9,6 +9,7 @@ pub struct Cli {
 }
 
 pub fn imprimir_banner() {
+    let version = env!("CARGO_PKG_VERSION");
     println!(
         r#"
  ____             _              ____        _  ____  __
@@ -19,7 +20,10 @@ pub fn imprimir_banner() {
                       |___/
 "#
     );
-    println!("            Escáner SYN + Monitor de conexiones — v0.7\n");
+    println!(
+        "            Escáner SYN + Monitor de conexiones — v{}\n",
+        version
+    );
     println!("────────────────────────────────────────────────────────────────");
     println!("⚠  AVISO DE RESPONSABILIDAD");
     println!("────────────────────────────────────────────────────────────────");
